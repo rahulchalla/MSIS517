@@ -1,0 +1,12 @@
+{
+      "RoC": [{
+          "id": 1,
+          "name": "Job Offer"
+      }, {
+          "id": 2,
+          "name": "Mentoring"
+      }, {
+          "id": 3,
+          "name": "Collaboration"
+      }]
+  }

@@ -1,6 +1,5 @@
-﻿<!DOCTYPE html>
 <html>
-<head>
+<body>
 
 <title>Skill Set!</title>
 <link href="css1/bootstrap.css" rel='stylesheet' type='text/css' />
@@ -18,8 +17,58 @@
 <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 <!-- start menu -->
-  
+<script src="jquery-1.12.4.js"></script>
+<script src="jquery-ui.js"></script>
+<link rel="stylesheet" href="jquery-ui.css"> 
 </head>
+<script src="../js/jquery.js"></script>
+<script>
+	$(document).ready(
+		function(){
+			$(".pop1").on('click', function(){
+				$(".box").slideDown("slow");
+			});
+
+			$(".close").on('click', function(){
+				$(".box").slideUp("slow");
+		});
+	});
+</script>
+
+<style>
+	.box{
+		background-color: white ;
+		height:200px;
+		width:400px;
+		position: absolute;
+		left:35%;
+		top:30%;
+		display:none;
+		text-align: center;
+		border: 2px solid black;
+	}
+	.close{
+		float:right;
+	}
+	#draggable {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+    padding-left: 20px;
+    left: 25px;
+    top: 30px;
+  }
+  #droppable {
+    position: absolute;
+    left: 250px;
+    top: 40px;
+    width: 125px;
+    height: 125px;
+    background: #999;
+    color: red;
+    padding: 10px;
+  }
+</style>
 <body>
 <!-- header -->	`
 
@@ -30,40 +79,41 @@
 			 	 
         
             <div class="profile-photo-container">
-          <img src="images/rahul.jpg" alt="Profile Photo" class="img-responsive">  
+          <img src="images/rahul.JPG" alt="Profile Photo" class="img-responsive">  
           <div class="profile-photo-overlay"></div>
         </div>
         
       
 		 </div>
 		<div class="details">
-			
+			<table>
 
-		 	<h3>+1 (510) 399-9596</h3>
+		 		<h3>+1 (510) 399-9596</h3>
 			<h3>rahul.challa1@marist.edu</h3>
 			<h3>99 Delafield Street</h3>
 			<h3>Poughkeepsie</h3>
 			<h3>New York - 12601</h3>
 <br>			
-			 <a href="rcr.pdf" download>
+			 <a class="pop1" href="#" >
   <h3>Download Resume</h3>
 </a>
-		
+		</table>
 	</div>
 		<div class="clearfix"></div>
 </div>
 <!---->
 <link href="css1/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
 <script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
-	<!---//pop-up-box-->			
+	<!---//pop-up-box---->			
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 	 <div class="content">
 		 <div class="details_header">
 			 <ul>
-				 <li><a href="homepage.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>HOME</a></li>
+				 <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>HOME</a></li>
 				 
 				 <li><a href="skillset.html"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>SKILL SET</a></li>
 				 <li><a href="portfolio.html"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>WORK EXPERIENCE</a></li>
+				 <li><a href="contact.html"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>CONTACT</a></li>
 				
 			 </ul>
 		 </div>
@@ -82,7 +132,25 @@
 	 </div>
 </div>
 <!---->
-
+<div class="box">
+	<img class="close" src="images/close.png" width="30"/>
+	<div>
+		<p>Perform Captcha</p>
+		<div id="droppable">Drop here</div>
+		<div id="draggable">Drag me</div>
+		<iframe id="my_iframe" style="display:none;"></iframe>
+		<script>
+$( "#draggable" ).draggable();
+$( "#droppable" ).droppable({
+  drop: function() {   
+  	//window.location.=url;
+    // window.open(url, 'download'); 
+    window.location.href = 'rcr.pdf';
+    }
+});
+</script>
+	</div>
+</div>
 </body>
 </html>
 
